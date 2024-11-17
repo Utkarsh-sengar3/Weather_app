@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Prediction</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            background-color: #d5eaff;
+            font-family: Arial, sans-serif;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Container for header */
+        .myDiv {
+            border: 5px outset rgb(34, 0, 255);
+            background-color: lightblue;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            border: 2px solid #010101;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #e9f2b4;
+        }
+
+        tr:hover {
+            background-color: #d4e8a3;
+        }
+
+        /* List Styling */
+        ul, ol {
+            margin: 10px 0 20px 20px;
+        }
+
+        /* Interactive Panels */
+        .collapsible {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        .content {
+            display: none;
+            padding: 10px 20px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        /* Tooltip styling */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 100%; 
+            left: 50%; 
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Image Styling */
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Header -->
+    <div class="myDiv">
+        <h2>Weather Prediction</h2>
+    </div>
+
+    <!-- Preface Section -->
+    <button class="collapsible">Preface</button>
+    <div class="content">
+        <ul>
+            <li>Introduction</li>
+            <li>What is Weather?</li>
+            <li>What is Weather Prediction?</li>
+            <li>Indian Civilization in Weather Prediction</li>
+            <li>Modern Times</li>
+            <li>Factors Affecting Weather</li>
+            <li>Mathematical Calculations</li>
+        </ul>
+    </div>
+
+    <!-- Team Section -->
+    <h2>Introduction</h2>
+    <h4>My Team</h4>
+    <ol>
+        <li>Utkarsh Sengar - RK24ANB48</li>
+        <li>Mohd Asdaq - RK24AN847</li>
+        <li>Bharat Kumar - RK24ANB49</li>
+    </ol>
+
+    <!-- About Section -->
+    <h4>About Webpage</h4>
+    <p>This page provides information about weather prediction, including images, videos, and various features.</p>
+
+    <!-- Weather Information Sections -->
+    <button class="collapsible">What is Weather?</button>
+    <div class="content">
+        <p>Weather refers to the atmospheric conditions in a particular place at a specific <b>time</b>. It includes various factors such as <b>temperature, humidity, precipitation (like rain, snow, sleet, or hail), wind speed and direction, visibility, and cloud cover</b>. Weather can change from minute to minute, hour to hour, and day to day.</b>.</p>
+        <img src="https://t4.ftcdn.net/jpg/04/85/17/33/360_F_485173339_rHVWOWEwZneJpHqgFNiYJLSPQg7hNoAA.jpg">
+    </div>
+
+    <button class="collapsible">Weather Prediction</button>
+    <div class="content">
+        <p>Weather prediction, also known as weather forecasting, estimates future atmospheric conditions. It involves analyzing meteorological data to forecast short-term and long-term weather.</p>
+        <img src="https://t3.ftcdn.net/jpg/04/91/02/50/360_F_491025099_rdcgGOq5xwmSDOOEbckF12C6B1Ap6uwt.jpg">
+        <ol>
+            <li><b>Data Collection:</b> Meteorologists gather data from a variety of sources, including:</li><br>
+            <ul>
+                <li><b>Weather Stations:</b> Provide information on temperature, humidity, wind speed, and atmospheric pressure.</li>
+                <li><b>Satellites:</b> Offer a broad view of weather patterns, cloud cover, and storms from space.</li>
+                <li><b>Radars:</b> Measure precipitation and track severe weather phenomena like thunderstorms and hurricanes.</li>
+                <li><b>Weather Buoys:</b> Collect data on ocean conditions and surface temperatures.</li>
+            </ul><br>
+            <li><b>Data Analysis:</b> Collected data is analyzed using:</li><br>
+            <ul>
+                <li><b>Numerical Weather Prediction (NWP) Models:</b> Complex computer models simulate atmospheric processes and predict future weather based on current data</li>
+                <li><b>Satical Methods:</b> Historical weather data and statistical techniques are used to identify patterns and make predictions.</li>
+            </ul>
+            <li><b>Forecasting:</b> The analyzed data is used to create weather forecasts, which include:</li><br>
+            <ul>
+                <li><b>Current Conditions:</b> What the weather is like now.</li>
+                <li><b>Short-term Forecasts:</b> Predictions for the next few hours or days.</li>
+                <Li><b>Long-term Forecasts:</b> Predictions for weeks or months ahead, often with a focus on general trends rather than specific details.</Li>
+            </ul><br>
+            <li><b>Communication:</b> Forecasts are then communicated to the public through various channels such as:</li>
+            <ul>
+                <li><b>Weather Apps:</b> Provide real-time updates and alerts.</li>
+                <li><b>TV and Radio:</b> Offer regular weather updates and severe weather warnings.</li>
+                <li><b>Websites:</b> Deliver detailed forecasts and interactive maps.</li>
+            </ul>
+        </ol><br>
+    </div>
+
+    <!-- Indian Civilization Section -->
+    <button class="collapsible">Indian Civilization</button>
+    <div class="content">
+        <p>Indian civilization has a rich history of weather prediction rooted in traditional knowledge, nature observations, and scientific advancements.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/India_southwest_summer_monsoon_onset_map_en.svg" width="400" height="500">
+        <ol>
+            <li><h4>Vedic and Ancient Texts</h4></li>
+                <ul>
+                    <li><b>Rigveda and Atharvaveda:</b> These ancient texts contain hymns and descriptions that suggest early forms of weather prediction and understanding of seasons. Rituals and prayers were often tied to agricultural cycles and weather conditions.</li>
+                    <li><B>Jyotisha (Astrology):</B> Ancient Indian astrology included weather prediction as part of its study. The position of stars and planets was believed to influence weather patterns, and astrologers would make predictions based on celestial observations.</li>
+                </ul>
+                <li><h4>Panchangam (Hindu Calendar)</h4></li>
+                <ul>
+                    <li><B>Observations of Nature:</B> Traditional methods included observing animal behavior, cloud formations, wind directions, and other natural signs. For example, the behavior of ants, birds, and flowering patterns of certain trees were used to predict rain.</li>
+                    <li><b>Local Proverbs and Folk Wisdom:</b> Various regions in India have their own set of proverbs and sayings that relate to weather prediction, often derived from centuries of local observations.</li>
+                </ul>
+                <li><h4>Agricultural Practices</h4></li>
+                <ul>
+                    <li>Ancient Indian civilization was largely agrarian, so predicting weather was crucial for farming. The monsoon was particularly important, and communities developed a deep understanding of monsoon patterns, even using the blooming of certain plants like the Neelakurinji (which blooms every 12 years) as a natural indicator.</li>
+                </ul>
+                <li><h4>Navagrahas and Rainfall Predictions</h4></li>
+                <ul>
+                    <li>In Indian mythology, the Navagrahas (nine planets) are believed to have an influence on weather. The worship of certain deities associated with rain, such as Lord Indra, the god of rain and thunderstorms, was a common practice for invoking good weather</li>
+                </ul>
+                <li><h4>Advancements Over Time</h4></li>
+                <ul>
+                    <li>Over centuries, these traditional methods were complemented by more systematic approaches with the advent of Indian texts on astronomy and meteorology. Scholars like Varahamihira, an ancient Indian astronomer and mathematician, wrote extensively on weather prediction in his works like the "Brihat Samhita," which detailed various techniques for forecasting weather based on lunar and solar cycles</li>
+                </ul>
+                <li><h4>Modern Integration</h4></li>
+                <ul>
+                    <li>Today, while modern meteorological techniques are widely used in India, traditional knowledge is still valued, especially in rural areas. The integration of ancient wisdom with modern weather forecasting methods continues to provide a holistic approach to understanding weather patterns in India</li>
+                </ul>
+            </ol>
+    </div>
+
+    <!-- Modern Times Section -->
+    <button class="collapsible">Modern Times</button>
+    <div class="content">
+        <h4>20th Century</h4>
+        <ul>
+            <li><b>Numerical Weather Prediction (NWP):</b> The advent of computers in the mid-20th century enabled the development of complex numerical models to predict weather. The first numerical weather predictions were made in the 1950s, using early computers to simulate atmospheric processes.</li>
+            <li><b>Satellite Technology:</b> The launch of the first weather satellite, TIROS-1, in 1960 provided real-time data on weather patterns from space, drastically improving forecasting accuracy and providing global coverage.</li>
+            <li><b>Radar Technology:</b> Weather radar, developed in the mid-20th century, allowed meteorologists to track precipitation and storm systems in detail.</li>
+        </ul>
+        <h4>21st Century</h4>
+        <ul>
+        <li><b>Advanced Models and Data Integration:</b> Modern weather forecasting utilizes sophisticated computer models, satellite data, and radar observations to provide highly accurate short-term and long-term forecasts. Data assimilation techniques integrate various sources of information for better predictions.</li>
+        <li><b>Real-Time Communication:</b> The proliferation of the internet and mobile technology has made weather forecasts widely accessible in real time, with interactive tools and apps offering personalized weather updates and alerts.</li>
+        <li><b>Climate Models:</b> Advances in climate modeling have improved understanding of long-term weather patterns and climate change, aiding in predicting future climate trends and their impacts.</li>
+        </ul>
+        <h4>Future</h4>
+    <ul>
+        <li><b>Artificial Intelligence (AI):</b> AI and machine learning are increasingly being used to refine weather predictions by analyzing vast amounts of data more efficiently and identifying patterns that traditional methods might miss.</li>
+        <li><b>Global Collaboration:</b> International cooperation continues to enhance weather prediction capabilities, with organizations like the World Meteorological Organization (WMO) facilitating data sharing and joint research efforts</li>
+    </ul>
+    <h2>Factor Effecting Weather</h2>
+    <ol>
+        <li><b>Temperature:</b> Driven by solar radiation, temperature varies based on geographical location, time of year, and altitude. Areas closer to the equator generally experience warmer temperatures compared to those further away.</li>
+        <li><b>Humidity:</b> The amount of moisture in the air affects weather patterns. High humidity can lead to cloud formation and precipitation, while low humidity can result in dry conditions.</li>
+        <li><b>Air Pressure:</b> Variations in atmospheric pressure influence wind patterns and weather systems. Low-pressure systems are often associated with stormy and unsettled weather, whereas high-pressure systems typically bring clear skies and calm conditions.</li>
+        <li><b>Wind:</b> Wind patterns are determined by the movement of air masses and pressure differences. Winds can transport moist or dry air, impacting local weather conditions and influencing temperature.</li>
+        <li><b>Topography:</b> Geographic features such as mountains, valleys, and bodies of water can significantly affect weather. For example, mountains can block or enhance precipitation, and coastal areas often experience milder temperatures compared to inland regions.</li>
+        <li><b>Ocean Currents:</b> Sea surface temperatures and ocean currents influence coastal weather patterns. Warm currents can lead to higher temperatures and increased rainfall, while cold currents can have the opposite effect.</li>
+    </ol>
+
+    <H2>Mathematical Calculation</H2>
+    <ol>
+        <li><H4>Continuity Equation (Mass Conservation):</H4></li>
+        <p>This equation ensures that mass is conserved in the atmosphere:</p>
+        <img src="https://content.cdntwrk.com/files/aHViPTExODYyNSZjbWQ9aXRlbWVkaXRvcmltYWdlJmZpbGVuYW1lPWl0ZW1lZGl0b3JpbWFnZV82MmNiYzk0YmVlMWUzLkpQRyZ2ZXJzaW9uPTAwMDAmc2lnPWMwNjYwZGRlMzkzNDIzMTYxY2MwZWQ4ZmUyOGQxOTlj">
+        <ul>
+            <li>Describes how changes in air density relate to the divergence (spreading out) of wind.</li>
+        </ul>
+        <li><b>Equation of State (Ideal Gas Law):</b></li>
+        <p>This links pressure, temperature, and density:</p>
+        <img src="https://media.wired.com/photos/62b08f2d3ef3f892537744b6/master/w_1600,c_limit/PVnRT1.jpg" width="300" height="200">
+        <ul>
+            <li><b>R:</b> Specific gas constant for dry air.</li>
+        </ul>
+        <li><b>Change in Temperature</b></li>
+        <p>it is used to denote what is defference between previous and present temperature:</p>
+        <h2>ΔT = Q / (m × c)</h2>
+        <ul>
+            <li><b>ΔT</b> is the change in temperature (in units of temperature, such as degrees Celsius or Kelvin)</li>
+            <li><b>Q</b> is the energy added or removed (in joules, J)</li>
+            <li><b>m</b> is the mass of the substance (in grams, g)</li>
+            <li><b>c</b> is the specific heat capacity of the substance (in joules per gram per degree Celsius, J/g°C)</li>
+        </ul>
+        <li><b>Wind Velocity</b></li>
+        <p>It show the speed of wind in our atmosphere:</p>
+        <h2>√(2 × wF / (aD × A))</h2>
+        <ul>
+            <li><b>wF:</b>Winf Force</li>
+            <li><b>aD:</b>Air Density</li>
+            <li><b>A:</b>Surface area</li>
+        </ul>
+    </ol>
+    </div>
+    <a href="https://weather.com/en-IN/?Goto=Redirected">Weather channel</a><br>
+    <a href="http://127.0.0.1:5500/index.html">Phagwara Weather</a><br>
+    <H2>Here are some videos for Weather prediciton</H2>
+    <video width="320" height="240" controls>
+        <source src="file:///C:/Users/utkar/OneDrive/Desktop/(1001)%20How%20AI%20Upscaling%20Improves%20Weather%20Forecasts%20-%20YouTube.html" type="video/mp4">
+      </video>
+      <video width="320" height="240" controls>
+        <source src="file:///C:/Users/utkar/OneDrive/Desktop/(1001)%20How%20AI%20Upscaling%20Improves%20Weather%20Forecasts%20-%20YouTube.html" type="video/mp4">
+      </video>
+      <video width="320" height="240" controls>
+        <source src="file:///C:/Users/utkar/OneDrive/Desktop/(1001)%20How%20AI%20Upscaling%20Improves%20Weather%20Forecasts%20-%20YouTube.html" type="video/mp4">
+      </video>
+
+    <!-- Weather Forecast Table -->
+    <h2>Weather Forecast</h2>
+    <table>
+        <tr>
+          <th>Date</th>
+          <th>Location</th>
+          <th>Temperature (°C)</th>
+          <th>Condition</th>
+          <th>Precipitation (%)</th>
+          <th>Wind Speed (km/h)</th>
+          <th>Humidity (%)</th>
+          <th>UV Index</th>
+        </tr>
+        <tr>
+          <td>2024-08-30</td>
+          <td>Mumbai, MH</td>
+          <td>32 / 26</td>
+          <td>Heavy Rainfall</td>
+          <td>90</td>
+          <td>20</td>
+          <td>85</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>2024-08-30</td>
+          <td>Delhi, DL</td>
+          <td>35 / 24</td>
+          <td>Partly Cloudy</td>
+          <td>20</td>
+          <td>15</td>
+          <td>50</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>2024-08-30</td>
+          <td>Bengaluru, KA</td>
+          <td>28 / 19</td>
+          <td>Light Showers</td>
+          <td>40</td>
+          <td>10</td>
+          <td>70</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>2024-08-30</td>
+          <td>Kolkata, WB</td>
+          <td>30 / 27</td>
+          <td>Thunderstorms</td>
+          <td>80</td>
+          <td>18</td>
+          <td>90</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>2024-08-30</td>
+          <td>Chennai, TN</td>
+          <td>34 / 27</td>
+          <td>Mostly Sunny</td>
+          <td>10</td>
+          <td>25</td>
+          <td>60</td>
+          <td>60</td>
+          </tr>
+          </table>
+ 
+
+    <script>
+        // JavaScript for collapsible sections
+        const collapsibles = document.querySelectorAll(".collapsible");
+        collapsibles.forEach(button => {
+            button.addEventListener("click", function() {
+                this.classList.toggle("active");
+                const content = this.nextElementSibling;
+                content.style.display = content.style.display === "block" ? "none" : "block";
+            });
+        });
+    </script>
+</body>
+</html>
